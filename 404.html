@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Membuka undangan…</title>
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #9ad4f4 0%, #c3e6fa 40%, #e2f3fd 75%, #f4fbff 100%);
+  }
+</style>
+<script>
+  /* GitHub Pages memakai berkas ini untuk setiap path yang tidak ada,
+     sehingga eren-birthday.github.io/putu bisa dipakai sebagai link share.
+     Nama pada path dipindahkan ke ?to= lalu diteruskan ke undangan. */
+  (function () {
+    // Buang garis miring di ujung supaya /putu/ dan /putu sama-sama jalan.
+    var path = location.pathname.replace(/\/+$/, '');
+    var slash = path.lastIndexOf('/');
+    var base = path.slice(0, slash + 1) || '/';
+    var segment = path.slice(slash + 1);
+
+    // Tanpa segmen, atau segmen berupa nama berkas halaman, tidak ada nama
+    // yang bisa dibaca; ke undangan biasa. Target selalu berbeda dari path
+    // saat ini, jadi tidak ada loop.
+    var skip = ['index.html', '404.html'];
+    var named = segment && skip.indexOf(segment.toLowerCase()) === -1;
+
+    // location.pathname sudah ter-encode. Decode dulu supaya
+    // encodeURIComponent tidak menghasilkan encode ganda (%20 jadi %2520).
+    var name = segment;
+    try {
+      name = decodeURIComponent(segment);
+    } catch (err) {
+      name = segment;
+    }
+
+    var target = named
+      ? base + 'index.html?to=' + encodeURIComponent(name) + location.hash
+      : base + 'index.html';
+
+    location.replace(target);
+  })();
+</script>
+</head>
+<body></body>
+</html>

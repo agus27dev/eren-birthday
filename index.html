@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eren Turning One! — Undangan Ulang Tahun</title>
+<meta name="description" content="Undangan ulang tahun pertama Eren. 07 Oktober 2026, 18:00 WITA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>">
+</head>
+<body>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<!-- balon terbang, latar belakang untuk kedua tahap -->
+<div class="balloons" aria-hidden="true">
+  <span class="balloon balloon--1"></span>
+  <span class="balloon balloon--2"></span>
+  <span class="balloon balloon--3"></span>
+  <span class="balloon balloon--4"></span>
+  <span class="balloon balloon--5"></span>
+  <span class="balloon balloon--6"></span>
+  <span class="balloon balloon--7"></span>
+</div>
+
+<!-- ================= TAHAP 1: AMPLOP ================= -->
+<section class="stage stage--envelope" id="stageEnvelope">
+  <div class="envelope" id="envelope">
+    <div class="envelope__body">
+      <span class="envelope__flap" aria-hidden="true"></span>
+      <span class="envelope__pocket" aria-hidden="true"></span>
+      <span class="envelope__letter" aria-hidden="true"></span>
+
+      <button class="seal" id="sealBtn" type="button" aria-label="Buka undangan">
+        <span class="seal__ring" aria-hidden="true"></span>
+        <span class="seal__text">Buka<br>Aku!</span>
+      </button>
+    </div>
+
+    <p class="envelope__to">Untuk <b id="guestNameEnvelope">Tamu Istimewa</b></p>
+  </div>
+</section>
+
+<!-- ================= TAHAP 2: KARTU UNDANGAN ================= -->
+<section class="stage stage--card" id="stageCard" hidden>
+  <article class="card" id="card">
+    <span class="card__tape card__tape--l" aria-hidden="true"></span>
+    <span class="card__tape card__tape--r" aria-hidden="true"></span>
+
+    <figure class="photo" id="photoFrame">
+      <img id="erenPhoto" src="images/eren.webp" alt="Eren tersenyum lebar" width="520" height="520">
+      <span class="photo__fallback" aria-hidden="true">👶</span>
+    </figure>
+
+    <p class="card__greeting">Halo, <b id="guestNameCard">Tamu Istimewa</b></p>
+
+    <header class="card__head">
+      <p class="card__eyebrow">Yuk Ramaikan</p>
+      <h1 class="card__title">
+        <span class="card__highlight">Ulang Tahun Eren!</span>
+      </h1>
+    </header>
+
+    <!-- <hr class="divider"> -->
+
+    <dl class="info">
+      <div class="info__row">
+        <dt>Waktu</dt>
+        <dd>07 Oktober 2026<span class="info__time">18:00 WITA</span></dd>
+      </div>
+      <div class="info__row">
+        <dt>Lokasi</dt>
+        <dd id="venueName">Ais Home Sanur</dd>
+      </div>
+    </dl>
+
+    <!-- Ganti href di bawah dengan link Google Maps Anda -->
+    <a class="btn" id="mapsLink" href="https://maps.app.goo.gl/VKPHEVwm4mMTZsJQ6" target="_blank" rel="noopener">
+      <span aria-hidden="true">📍</span> Lihat Lokasi
+    </a>
+
+    <p class="card__closing">
+      Datang ya, kita main, makan kue, dan tiup lilin bareng!
+    </p>
+
+    <p class="card__sign">— Papa, Mama &amp; Eren</p>
+  </article>
+
+  <button class="replay" id="replayBtn" type="button">Tutup Undangan</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
